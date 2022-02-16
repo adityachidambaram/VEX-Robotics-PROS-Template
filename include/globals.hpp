@@ -1,31 +1,23 @@
 #include "main.h"
 
-// GLOBALS
-
-//drive motors
+//THESE ARE THE DRIVE MOTORS
 extern pros::Motor backLeft;
 extern pros::Motor backRight;
 extern pros::Motor frontLeft;
 extern pros::Motor frontRight;
 
-//lift motor
+
+//THIS IS THE LIFT MOTOR
 extern pros::Motor lift;
 
-//back wings motors
-extern pros::Motor backLift;
-// clamp piston
-extern pros::ADIDigitalOut clampPiston;
+/***************************************************************************************
+- DECLARE ANY EXTRA MOTORS YOU WILL NEED                                               *
+***************************************************************************************/
 
-// Sensors
+//PISTON - COMMENT OUT OR DELETE IF NOT NEEDDED
+extern pros::ADIDigitalOut piston;
+
+
 extern pros::Imu inertial;
 
-//auton switcher
-
-
-// Main Controller
 extern pros::Controller controller;
-
-
-
-extern int autonState;
-extern bool open;

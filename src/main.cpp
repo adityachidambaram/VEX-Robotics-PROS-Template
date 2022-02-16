@@ -26,7 +26,7 @@ void initialize() {
 	 */
 
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hi monkey ");
+	pros::lcd::set_text(1, "HELLO");
 	pros::lcd::register_btn1_cb(on_center_button);
 
 	backLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
@@ -35,9 +35,12 @@ void initialize() {
 	frontLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
 	lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-	backLift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 
-	clampPiston.set_value(false);
+/***************************************************************************************
+- SET BRAKE MODE FOR ANY MOTORS YOU HAVE CREATED                                       *
+***************************************************************************************/
+
+	piston.set_value(false);
 
 	inertial.reset();
 }
@@ -63,21 +66,32 @@ void competition_initialize() {
 	 * starts.
 	 */
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "750C :)");
+	pros::lcd::set_text(1, "HELLO");
 	pros::lcd::register_btn1_cb(on_center_button);
 	pros::lcd::clear_line(1);
 
-
-	pros::lcd::set_text(1, "No auton currently selected.");
-	clampPiston.set_value(false);
+	piston.set_value(false);
 
 
 }
 
 
 void autonomous() {
-	forwardClamp();
-	//forwardAWP();
+
+/***************************************************************************************
+- UN-COMMENT THE METHOD YOU ARE RUNNING												   *
+- ADD ANY SELF CREATED AUTONS YOU HAVE MADE                                            *
+***************************************************************************************/
+
+	//redFront();
+	//redBack();
+	//redFrontAWP();
+	//redBackAWP();
+	//blueFront();
+	//blueBack();
+	//blueFrontAWP();
+	//blueBackAWP();
+
 }
 
 
@@ -100,7 +114,10 @@ void opcontrol() {
 		setDriveMotors();
 		moveLift();
 		moveClamp();
-		moveBackLift();
 		pros::delay(10);
+
+/***************************************************************************************
+- RUN METHODS FOR MOTORS YOU HAVE ADDED ON YOUR OWN                                    *
+***************************************************************************************/
 	}
 }
