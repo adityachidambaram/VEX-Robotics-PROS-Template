@@ -2,7 +2,6 @@
 
 
 void setDrive(int left, int right);
-
 void resetMotorEncoders();
 double getRightEncoder();
 double getLeftEncoder();
